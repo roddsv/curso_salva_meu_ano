@@ -1,148 +1,223 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Curso de Matemática Salva Meu Ano</title>
-    <link rel="icon" type="image/png" href="imgs/logo.png">
-    <link rel="stylesheet" href="index.css">
-    
-</head>
-<body>
-    <div class="header">
-        Curso de Matemática Salva Meu Ano
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-        <a href="#checkout" style="text-decoration: none;">
-            <button style="background-color: #28a745; color: white; padding: 10px 20px; border: none; font-size: 16px; cursor: pointer; border-radius: 5px;">Sim, quero aprender Matemática!</button>
-        </a>
-    </div>
-    <div class="container">
-        <div class="video-container">
-            <iframe width="100%" height="400px" src="https://www.youtube.com/embed/SEU_VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <div class="container">
-        <h2>Conteúdo do Curso</h2>
-        <div class="course-content">
-            <div class="column">
-                <ul>
-                    <li><strong>ÁLGEBRA</strong></li>
-                    <ul>
-                        <li>Introdução ao Estudo das Funções</li>
-                        <li>Conceito de Função</li>
-                        <li>Domínio, Imagem e Contradomínio de uma Função</li>
-                        <li><strong>Função Afim (ou Função do 1º Grau)</strong></li>
-                        <ul>
-                            <li>Conceitos, Raiz e Classificações</li>
-                            <li>Estudo do Gráfico</li>
-                            <li>Determinação do Gráfico a partir de Dois Valores Numéricos</li>
-                            <li>Determinação da Função a partir de Dois Valores Numéricos</li>
-                            <li>Inequações do 1º Grau</li>
-                        </ul>
-                        <li><strong>Função Quadrática (ou Função do Segundo Grau)</strong></li>
-                        <ul>
-                            <li>Conceito e Identificação dos Coeficientes</li>
-                            <li>Cálculo das Raízes</li>
-                            <li>Estudo do Vértice</li>
-                            <li>Estudo do Gráfico</li>
-                            <li>Estudo do Sinal</li>
-                            <li>Inequações do 2º Grau</li>
-                        </ul>
-                        <li><strong>Função Modular</strong></li>
-                        <ul>
-                            <li>Revisão de Módulos</li>
-                            <li>Conceito e Raízes</li>
-                            <li>Estudo do Gráfico</li>
-                            <li>Equações Modulares</li>
-                            <li>Inequações Modulares</li>
-                        </ul>
-                    </ul>
-                </ul>
-            </div>
-            <div class="column">
-                <ul>
-                    <li><strong>LOGARITMOS E FUNÇÃO LOGARÍTMICA</strong></li>
-                    <ul>
-                        <li>Logaritmos – Definição e Elementos</li>
-                        <li>Logaritmos – Consequências da Definição</li>
-                        <li>Logaritmos - Propriedades</li>
-                        <li>Equações Logarítmicas</li>
-                        <li>Função Logarítmica – Conceito</li>
-                        <li>Função Logarítmica – Estudo do Gráfico</li>
-                        <li>Inequações Logarítmicas</li>
-                    </ul>
-                </ul>
-            </div>
-            <div class="column">
-                <ul>
-                    <li><strong>TRIGONOMETRIA</strong></li>
-                    <ul>
-                        <li>Relações Trigonométricas no Triângulo Retângulo</li>
-                        <li>Valores Notáveis do Seno, Cosseno e Tangente</li>
-                        <li>Relações Trigonométricas no Triângulo Qualquer (Lei dos Senos e Lei dos Cossenos)</li>
-                        <li>Ângulos e Arcos (Graus e Radianos)</li>
-                        <li>Equações Trigonométricas</li>
-                        <li>Ciclo Trigonométrico</li>
-                        <li>Relação Fundamental da Trigonometria</li>
-                        <li>Valor das Relações Trigonométricas nos Ângulos de Eixo</li>
-                        <li>Secante, Cossecante e Cotangente</li>
-                        <li>Equações Trigonométricas a partir da Relação Fundamental</li>
-                        <li>Trabalhando com Ângulos acima de 90 graus</li>
-                        <li>Ângulos fora da primeira volta positiva</li>
-                        <li>Redução ao Primeiro Quadrante da Volta Positiva</li>
-                        <li>Trigonometria dos Ângulos Negativos</li>
-                        <li>Arco da Soma e da Diferença</li>
-                        <li>Arcos Duplos</li>
-                        
-                        <strong>E mais conteúdos sob demanda do 1º Ano do Ensino Médio!</strong>
-                    </ul>
-                </ul>
-            </div>
-        </div>
+    <link rel="icon" type="image/png" href="imgs/logo.png" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="header">Curso de Matemática Salva Meu Ano</div>
+    <div style="text-align: center; margin-top: 20px">
+      <a href="#checkout" style="text-decoration: none">
+        <button
+          style="
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+          "
+        >
+          Sim, quero aprender Matemática!
+        </button>
+      </a>
     </div>
     <div class="container">
-        <h2>Depoimentos de Alunos</h2>
-        <div class="carousel-container">
-            <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
-            <div class="carousel-track" id="carouselTrack">
-                <div class="testimonial">
-                    <iframe src="https://www.youtube.com/embed/A24viw4w5JM?" frameborder="0" allowfullscreen></iframe>
-                    <p class="testimonial-info"><strong>Nathalia Batista</strong> - Administradora de Empresas</p>
-                </div>
-                <div class="testimonial">
-                    <iframe src="https://www.youtube.com/embed/A24viw4w5JM?" frameborder="0" allowfullscreen></iframe>
-                    <p class="testimonial-info"><strong>Nathalia Batista</strong> - Administradora de Empresas</p>
-                </div>
-                <div class="testimonial">
-                    <iframe src="https://www.youtube.com/embed/A24viw4w5JM?" frameborder="0" allowfullscreen></iframe>
-                    <p class="testimonial-info"><strong>Nathalia Batista</strong> - Administradora de Empresas</p>
-                </div>
-                <div class="testimonial">
-                    <iframe src="https://www.youtube.com/embed/A24viw4w5JM?" frameborder="0" allowfullscreen></iframe>
-                    <p class="testimonial-info"><strong>Nathalia Batista</strong> - Administradora de Empresas</p>
-                </div>
-                <div class="testimonial">
-                    <iframe src="https://www.youtube.com/embed/A24viw4w5JM?" frameborder="0" allowfullscreen></iframe>
-                    <p class="testimonial-info"><strong>Nathalia Batista</strong> - Administradora de Empresas</p>
-                </div>
-                <div class="testimonial">
-                    <iframe src="https://www.youtube.com/embed/A24viw4w5JM?" frameborder="0" allowfullscreen></iframe>
-                    <p class="testimonial-info"><strong>Nathalia Batista</strong> - Administradora de Empresas</p>
-                </div>
-                
-            </div>
-            <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="400px"
+          src="https://www.youtube.com/embed/SEU_VIDEO_ID"
+          frameborder="0"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Conteúdo do Curso</h2>
+      <div class="course-content">
+        <div class="column">
+          <ul>
+            <ul>
+              <li><strong>ÁLGEBRA</strong></li>
+              <li>Introdução ao Estudo das Funções</li>
+              <li>Conceito de Função</li>
+              <li>Domínio, Imagem e Contradomínio de uma Função</li>
+              <li><strong>Função Afim (ou Função do 1º Grau)</strong></li>
+              <ul>
+                <li>Conceitos, Raiz e Classificações</li>
+                <li>Estudo do Gráfico</li>
+                <li>
+                  Determinação do Gráfico a partir de Dois Valores Numéricos
+                </li>
+                <li>
+                  Determinação da Função a partir de Dois Valores Numéricos
+                </li>
+                <li>Inequações do 1º Grau</li>
+              </ul>
+              <li>
+                <strong>Função Quadrática (ou Função do Segundo Grau)</strong>
+              </li>
+              <ul>
+                <li>Conceito e Identificação dos Coeficientes</li>
+                <li>Cálculo das Raízes</li>
+                <li>Estudo do Vértice</li>
+                <li>Estudo do Gráfico</li>
+                <li>Estudo do Sinal</li>
+                <li>Inequações do 2º Grau</li>
+              </ul>
+              <li><strong>Função Modular</strong></li>
+              <ul>
+                <li>Revisão de Módulos</li>
+                <li>Conceito e Raízes</li>
+                <li>Estudo do Gráfico</li>
+                <li>Equações Modulares</li>
+                <li>Inequações Modulares</li>
+              </ul>
+            </ul>
+          </ul>
+          <ul>
+            <li><strong>LOGARITMOS E FUNÇÃO LOGARÍTMICA</strong></li>
+            <ul>
+              <li>Logaritmos – Definição e Elementos</li>
+              <li>Logaritmos – Consequências da Definição</li>
+              <li>Logaritmos - Propriedades</li>
+              <li>Equações Logarítmicas</li>
+            </ul>
+          </ul>
         </div>
+        <div class="column">
+          <ul>
+            <ul>
+              <li>Função Logarítmica – Conceito</li>
+              <li>Função Logarítmica – Estudo do Gráfico</li>
+              <li>Inequações Logarítmicas</li>
+              <li><strong>TRIGONOMETRIA</strong></li>
+              <li>Relações Trigonométricas no Triângulo Retângulo</li>
+              <li>Valores Notáveis do Seno, Cosseno e Tangente</li>
+              <li>
+                Relações Trigonométricas no Triângulo Qualquer (Lei dos Senos e
+                Lei dos Cossenos)
+              </li>
+              <li>Ângulos e Arcos (Graus e Radianos)</li>
+              <li>Equações Trigonométricas</li>
+              <li>Ciclo Trigonométrico</li>
+              <li>Relação Fundamental da Trigonometria</li>
+              <li>Valor das Relações Trigonométricas nos Ângulos de Eixo</li>
+              <li>Secante, Cossecante e Cotangente</li>
+              <li>Equações Trigonométricas a partir da Relação Fundamental</li>
+              <li>Trabalhando com Ângulos acima de 90 graus</li>
+              <li>Ângulos fora da primeira volta positiva</li>
+              <li>Redução ao Primeiro Quadrante da Volta Positiva</li>
+              <li>Trigonometria dos Ângulos Negativos</li>
+              <li>Arco da Soma e da Diferença</li>
+              <li>Arcos Duplos</li>
+
+              <br />
+              <br />
+              <strong
+                >E mais conteúdos sob demanda do 1º Ano do Ensino Médio!</strong
+              >
+            </ul>
+          </ul>
+        </div>
+      </div>
     </div>
-    <div id="checkout" style="text-align: center; margin: 40px 0;">
-        <a href="https://pay.kiwify.com.br/heFIAFx" target="_blank">
-            <button style="background-color: #004d99; color: white; padding: 15px 30px; border: none; font-size: 18px; cursor: pointer; border-radius: 5px;">Estou pronto pra aprender Matemática!</button>
-        </a>
+    <div class="container">
+      <h2>Depoimentos de Alunos</h2>
+      <div class="carousel-container">
+        <button class="carousel-btn prev" onclick="moveCarousel(-1)">
+          &#10094;
+        </button>
+        <div class="carousel-track" id="carouselTrack">
+          <div class="testimonial">
+            <iframe
+              src="https://www.youtube.com/embed/A24viw4w5JM?"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <p class="testimonial-info">
+              <strong>Nathalia Batista</strong> - Administradora de Empresas
+            </p>
+          </div>
+          <div class="testimonial">
+            <iframe
+              src="https://www.youtube.com/embed/A24viw4w5JM?"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <p class="testimonial-info">
+              <strong>Nathalia Batista</strong> - Administradora de Empresas
+            </p>
+          </div>
+          <div class="testimonial">
+            <iframe
+              src="https://www.youtube.com/embed/A24viw4w5JM?"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <p class="testimonial-info">
+              <strong>Nathalia Batista</strong> - Administradora de Empresas
+            </p>
+          </div>
+          <div class="testimonial">
+            <iframe
+              src="https://www.youtube.com/embed/A24viw4w5JM?"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <p class="testimonial-info">
+              <strong>Nathalia Batista</strong> - Administradora de Empresas
+            </p>
+          </div>
+          <div class="testimonial">
+            <iframe
+              src="https://www.youtube.com/embed/A24viw4w5JM?"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <p class="testimonial-info">
+              <strong>Nathalia Batista</strong> - Administradora de Empresas
+            </p>
+          </div>
+          <div class="testimonial">
+            <iframe
+              src="https://www.youtube.com/embed/A24viw4w5JM?"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+            <p class="testimonial-info">
+              <strong>Nathalia Batista</strong> - Administradora de Empresas
+            </p>
+          </div>
+        </div>
+        <button class="carousel-btn next" onclick="moveCarousel(1)">
+          &#10095;
+        </button>
+      </div>
     </div>
-    <div class="footer">
-        &copy; 2025 Curso de Matemática Salva Meu Ano
+    <div id="checkout" style="text-align: center; margin: 40px 0">
+      <a href="https://pay.kiwify.com.br/heFIAFx" target="_blank">
+        <button
+          style="
+            background-color: #004d99;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+          "
+        >
+          Estou pronto pra aprender Matemática!
+        </button>
+      </a>
     </div>
+    <div class="footer">&copy; 2025 Curso de Matemática Salva Meu Ano</div>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

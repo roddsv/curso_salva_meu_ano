@@ -29,15 +29,72 @@ body {
     display: flex;
     justify-content: space-between;
     gap: 20px;
+    flex-wrap: wrap;
 }
+
 .column {
     flex: 1;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px;
+    min-width: 280px;
+    padding: 20px;
+    background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    padding-left: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* .column:hover {
+    transform: scale(1.05);
+} */
+
+/* Ajuste na segunda coluna */
+.column:nth-child(2) ul li {
+    line-height: 2;
+    width: 90%;
+}
+
+
+
+.column strong {
+    font-size: 18px;
+    color: #004d99;
+    border-bottom: 2px solid #004d99;
+    display: block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.column ul {
+    padding: 0;
+    list-style: none;
+}
+
+.column ul li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.column ul li::before {
+    content: "📌 ";
+    color: #004d99;
+    font-size: 18px;
+}
+
+.column > ul > li > strong {
+    font-size: 20px;
+    color: #004d99;
+    border-bottom: 3px solid #004d99;
+    display: block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.column ul ul > li > strong {
+    font-size: 18px;
+    color: #004d99;
+    border-bottom: 1.5px solid #004d99;
+    display: block;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
 }
 .carousel-container {
     position: relative;
