@@ -220,4 +220,15 @@ body {
 
 .overlay {
     position: fixed;
+}
+
+.checkout-button {
+    background-color: #004d99;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
   
