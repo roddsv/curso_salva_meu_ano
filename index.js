@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector("a[href='#checkout']").addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector("#checkout").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+
   const track = document.getElementById("carouselTrack");
   const prevButton = document.querySelector(".carousel-btn.prev");
   const nextButton = document.querySelector(".carousel-btn.next");
