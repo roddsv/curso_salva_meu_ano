@@ -10,6 +10,7 @@ body {
     background-attachment: fixed;
     background-blend-mode: lighten;
 }
+
 .header {
     background-color: #004d99;
     color: white;
@@ -17,6 +18,7 @@ body {
     font-size: 24px;
     font-weight: bold;
 }
+
 .container {
     margin: 40px auto;
     width: 80%;
@@ -25,6 +27,7 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
+
 .course-content {
     display: flex;
     justify-content: space-between;
@@ -42,25 +45,30 @@ body {
     transition: transform 0.3s ease-in-out;
 }
 
-/* .column:hover {
-    transform: scale(1.05);
-} */
-
 /* Ajuste na segunda coluna */
 .column:nth-child(2) ul li {
     line-height: 2;
     width: 90%;
 }
 
-
-
-.column strong {
-    font-size: 18px;
+/* Ajuste na borda da classe "topic" */
+.column > ul > li > strong .topic {
+    font-size: 20px;
     color: #004d99;
-    border-bottom: 2px solid #004d99;
+    border-bottom: 3px solid #004d99;
     display: block;
     padding-bottom: 5px;
     margin-bottom: 10px;
+}
+
+/* Ajuste na borda da classe "subtopic" para ser metade da "topic" */
+.column ul ul > li > strong .subtopic {
+    font-size: 18px;
+    color: #004d99;
+    border-bottom: 1.5px solid #004d99; /* Metade da borda da "topic" */
+    display: block;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
 }
 
 .column ul {
@@ -73,46 +81,36 @@ body {
     font-size: 16px;
 }
 
-.column ul li::before {
+/* Clipes vermelhos apenas nos <li> sem <strong> ou <ul> dentro */
+.column ul li:not(:has(strong, ul))::before {
     content: "📌 ";
-    color: #004d99;
+    color: red;
     font-size: 18px;
 }
 
-.column > ul > li > strong {
-    font-size: 20px;
-    color: #004d99;
-    border-bottom: 3px solid #004d99;
-    display: block;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-.column ul ul > li > strong {
-    font-size: 18px;
-    color: #004d99;
-    border-bottom: 1.5px solid #004d99;
-    display: block;
-    padding-bottom: 3px;
-    margin-bottom: 8px;
-}
+/* Estilos do carrossel */
 .carousel-container {
     position: relative;
     overflow: hidden;
     width: 80%;
     margin: auto;
 }
+
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
     gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
+
 .carousel-track iframe {
     width: 300px;
     height: 170px;
     border: 3px solid #004d99;
     border-radius: 10px;
 }
+
 .carousel-btn {
     position: absolute;
     top: 50%;
@@ -130,24 +128,10 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .prev { left: 10px; }
-.next { right: 10px; } {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 18px;
-}
-.prev {
-    left: 0;
-}
-.next {
-    right: 0;
-}
+.next { right: 10px; }
+
 @media screen and (max-width: 768px) {
     .course-content {
         flex-direction: column;
@@ -172,54 +156,7 @@ body {
         height: 250px;
     }
 }
-    .testimonial {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 300px;
-}
-.testimonial-info {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #333;
-}
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 10px;
-    align-items: center;
-}
-.testimonial {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 300px;
-    transition: transform 0.5s ease, width 0.5s ease;
-}
-.testimonial iframe {
-    width: 300px;
-    height: 170px;
-    border: 3px solid #004d99;
-    border-radius: 10px;
-    transition: width 0.5s ease, height 0.5s ease;
-}
-.testimonial.active {
-    transform: scale(1.2);
-    width: 100%;
-}
-.testimonial.active iframe {
-    width: 100%;
-    height: 350px;
-}
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-}
+
 .testimonial {
     display: flex;
     flex-direction: column;
@@ -228,6 +165,7 @@ body {
     width: 300px;
     transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
 }
+
 .testimonial iframe {
     width: 300px;
     height: 170px;
@@ -235,14 +173,17 @@ body {
     border-radius: 10px;
     transition: width 0.5s ease, height 0.5s ease;
 }
+
 .testimonial.active {
     width: 500px;
     transform: scale(1.2);
 }
+
 .testimonial.active iframe {
     width: 100%;
     height: 280px;
 }
+
 .modal-video {
     position: fixed;
     top: 50%;
@@ -261,40 +202,18 @@ body {
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     opacity: 0;
 }
+
 .modal-video.active {
     transform: translate(-50%, -50%) scale(1);
     opacity: 1;
 }
+
 .modal-video iframe {
     width: 100%;
     height: 450px;
     border-radius: 10px;
 }
+
 .overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: none;
-}
-.overlay.active {
-    display: block;
-}
-.carousel-track {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-}
-.carousel-track.modal-active {
-    opacity: 0.3;
-}
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-}
+  
