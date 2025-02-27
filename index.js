@@ -7,48 +7,52 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-  const track = document.getElementById("carouselTrack");
-  const prevButton = document.querySelector(".carousel-btn.prev");
-  const nextButton = document.querySelector(".carousel-btn.next");
-  const testimonials = track.children;
-  const items = testimonials.length;
+    const track = document.getElementById("carouselTrack");
+    const prevButton = document.querySelector(".carousel-btn.prev");
+    const nextButton = document.querySelector(".carousel-btn.next");
+    const testimonials = Array.from(track.children);
+    const videoWidth = 320; // Largura de cada item (ajuste se necessário)
+    let currentIndex = 1; // Inicia no primeiro item real
 
-  track.style.transform = `translateX(0px)`;
-  currentIndex = 0;
-  setTimeout(updateCarousel, 100);
-  currentIndex = 0;
-  updateCarousel();
-  track.scrollLeft = 0;
+    // 🔹 CLONANDO PRIMEIRO E ÚLTIMO ITEM PARA O EFEITO INFINITO 🔹
+    const firstClone = testimonials[0].cloneNode(true);
+    const lastClone = testimonials[testimonials.length - 1].cloneNode(true);
+    track.appendChild(firstClone); // Adiciona o primeiro item no final
+    track.insertBefore(lastClone, testimonials[0]); // Adiciona o último item no início
 
-  function updateCarousel() {
-    const videoWidth = 320;
-    const visibleVideos = 2;
-    const containerWidth = videoWidth * visibleVideos;
+    // 🔹 CONFIGURANDO TAMANHO DO CARROSSEL 🔹
+    const items = track.children.length; // Atualizado com os clones
     track.style.width = `${items * videoWidth}px`;
     track.style.transform = `translateX(${-currentIndex * videoWidth}px)`;
-    prevButton.style.display = currentIndex === 0 ? "none" : "block";
-    nextButton.style.display =
-      currentIndex + visibleVideos >= items ? "none" : "block";
-    prevButton.style.display = "block";
-    nextButton.style.display = currentIndex === items - 1 ? "none" : "block";
-  }
 
-  function moveCarousel(direction) {
-    if (
-      (direction === 1 && currentIndex < items - 1) ||
-      (direction === -1 && currentIndex > 0)
-    ) {
-      currentIndex += direction;
-      updateCarousel();
+    function moveCarousel(direction) {
+        currentIndex += direction;
+        track.style.transition = "transform 0.5s ease-in-out";
+        track.style.transform = `translateX(${-currentIndex * videoWidth}px)`;
+
+        // 🔹 RESETAR POSIÇÃO QUANDO CHEGAR NO FINAL 🔹
+        setTimeout(() => {
+            if (currentIndex >= items - 1) {
+                currentIndex = 1; // Volta para o primeiro real
+                track.style.transition = "none"; // Remove a transição para parecer contínuo
+                track.style.transform = `translateX(${-currentIndex * videoWidth}px)`;
+            }
+            if (currentIndex <= 0) {
+                currentIndex = items - 2; // Volta para o último real
+                track.style.transition = "none";
+                track.style.transform = `translateX(${-currentIndex * videoWidth}px)`;
+            }
+        }, 500); // Aguarda a transição antes de resetar
     }
-  }
 
-  prevButton.addEventListener("click", function () {
-    moveCarousel(-1);
-  });
-  nextButton.addEventListener("click", function () {
-    moveCarousel(1);
-  });
+    nextButton.addEventListener("click", function () {
+        moveCarousel(1);
+    });
 
-  updateCarousel();
+    prevButton.addEventListener("click", function () {
+        moveCarousel(-1);
+    });
+
+    // 🔹 SCROLL AUTOMÁTICO 🔹
+    // setInterval(() => moveCarousel(1), 5000);
 });
